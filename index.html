@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Score – Trust Score for E-commerce Customers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header class="navbar" id="navbar">
+    <div class="nav-top">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-logo">
+          <img src="images/logo.jpg" alt="" class="nav-logo-img"
+            onerror="this.style.display='none'; this.nextElementSibling.classList.add('visible')"
+            onload="this.style.display='block'; this.nextElementSibling.classList.remove('visible')"
+            style="display:none">
+          <span class="nav-logo-fallback visible">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="url(#navLogoGrad)" />
+              <path d="M10 16l4 4 8-8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <defs>
+                <linearGradient id="navLogoGrad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#4f46e5" />
+                  <stop offset="1" stop-color="#7c3aed" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+        </span>
+        <span class="nav-brand-text">Shop Score</span>
+      </a>
+      <div class="nav-actions">
+        <a href="user-login.html" class="btn btn-outline">User Login</a>
+        <a href="admin-login.html" class="btn btn-primary">Admin Login</a>
+      </div>
+    </div>
+    <nav class="nav-main">
+      <a href="#problem">Problem Statement</a>
+      <a href="#solution">Solution</a>
+      <a href="#how">How It Works</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#about">About Project</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content animate-in">
+        <h1>Shop Score – Trust Score for E-commerce Customers</h1>
+        <p class="subtitle">An AI-based customer reliability scoring system that helps marketplaces and sellers reduce
+          fraud, optimize delivery options, and offer personalized experiences—all from a single 0–1000 score.</p>
+        <a href="user-login.html" class="btn btn-primary btn-cta">Check Shop Score</a>
+      </div>
+      <div class="hero-illus animate-in" style="animation-delay: 0.15s;">
+        <svg width="100%" height="100%" viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <defs>
+            <linearGradient id="heroGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#4f46e5" />
+              <stop offset="100%" style="stop-color:#7c3aed" />
+            </linearGradient>
+            <linearGradient id="heroGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#818cf8;stop-opacity:0.4" />
+              <stop offset="100%" style="stop-color:#4f46e5;stop-opacity:0.1" />
+            </linearGradient>
+          </defs>
+          <rect x="40" y="60" width="320" height="200" rx="16" fill="url(#heroGrad2)" />
+          <circle cx="200" cy="140" r="50" stroke="url(#heroGrad1)" stroke-width="4" fill="none" />
+          <path d="M175 140 L195 160 L235 120" stroke="url(#heroGrad1)" stroke-width="5" stroke-linecap="round"
+            stroke-linejoin="round" fill="none" />
+          <rect x="120" y="240" width="80" height="40" rx="8" fill="url(#heroGrad1)" opacity="0.9" />
+          <rect x="200" y="240" width="80" height="40" rx="8" fill="url(#heroGrad1)" opacity="0.6" />
+          <rect x="280" y="240" width="80" height="40" rx="8" fill="url(#heroGrad1)" opacity="0.3" />
+          <circle cx="80" cy="80" r="24" fill="#e0e7ff" />
+          <circle cx="320" cy="200" r="20" fill="#c7d2fe" />
+        </svg>
+      </div>
+    </section>
+
+    <section id="problem" class="section reveal">
+      <div class="container">
+        <h2>Problem Statement</h2>
+        <p class="subtitle">
+          Indian e-commerce platforms are facing major operational losses due to
+          frequent order cancellations, delivery failures and unnecessary product returns.
+        </p>
+
+        <div class="card-grid">
+          <div class="info-card reveal-item">
+            <h3>No Customer Reliability System</h3>
+            <p>There is no standardized method to evaluate how reliable a customer is before giving benefits like COD or
+              discounts.</p>
+          </div>
+
+          <div class="info-card reveal-item">
+            <h3>Losses for Platforms</h3>
+            <p>Unpredictable buyer behavior leads to high logistics cost, return handling cost and operational losses.
+            </p>
+          </div>
+
+          <div class="info-card reveal-item">
+            <h3>Unfair Benefit Usage</h3>
+            <p>Discounts, COD and delivery benefits are given without accountability, increasing misuse of services.</p>
+          </div>
+
+          <div class="info-card reveal-item">
+            <h3>Reduced Trust</h3>
+            <p>Platforms cannot identify trustworthy customers easily, reducing overall system efficiency and trust.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="solution" class="section light reveal">
+      <div class="container">
+        <h2>Our Solution</h2>
+        <p class="subtitle">
+          Shop Score introduces a trust-based scoring system that evaluates customers based on their behavior.
+        </p>
+
+        <div class="card-grid">
+          <div class="info-card reveal-item">
+            <h3>Customer Trust Score</h3>
+            <p>Each user gets a Shop Score based on order history, cancellations, returns and payment behavior.</p>
+          </div>
+
+          <div class="info-card reveal-item">
+            <h3>Identify Risk Users</h3>
+            <p>System identifies high-risk and trustworthy customers to help platforms make better decisions.</p>
+          </div>
+
+          <div class="info-card reveal-item">
+            <h3>Reward Good Customers</h3>
+            <p>Responsible users receive better discounts, faster delivery and exclusive offers.</p>
+          </div>
+
+          <div class="info-card reveal-item">
+            <h3>Control Risk</h3>
+            <p>High-risk users may get restricted COD, advance payment options or limited benefits.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="how" class="section reveal">
+      <div class="container">
+        <h2>How It Works</h2>
+
+        <div class="steps">
+          <div class="step reveal-item">
+            <span>01</span>
+            <h3>Collect Data</h3>
+            <p>Order history, cancellations, returns and payment data are collected.</p>
+          </div>
+
+          <div class="step reveal-item">
+            <span>02</span>
+            <h3>Process Data</h3>
+            <p>Data is cleaned, organized and prepared for analysis.</p>
+          </div>
+
+          <div class="step reveal-item">
+            <span>03</span>
+            <h3>Analyze Behaviour</h3>
+            <p>Customer order completion rate and reliability metrics are calculated.</p>
+          </div>
+
+          <div class="step reveal-item">
+            <span>04</span>
+            <h3>Generate Score</h3>
+            <p>System assigns a Shop Score between 0–1000 to each customer.</p>
+          </div>
+
+          <div class="step reveal-item">
+            <span>05</span>
+            <h3>Apply Decisions</h3>
+            <p>Benefits, delivery options and payment methods are decided based on score.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="benefits" class="section light reveal">
+      <div class="container">
+        <h2>Benefits</h2>
+
+        <div class="card-grid">
+          <div class="info-card reveal-item">
+            <h3>For E-Commerce Platforms</h3>
+            <ul>
+              <li>Reduce losses from cancellations & returns</li>
+              <li>Improve delivery efficiency</li>
+              <li>Better risk management</li>
+              <li>Smarter decision making</li>
+            </ul>
+          </div>
+
+          <div class="info-card reveal-item">
+            <h3>For Customers</h3>
+            <ul>
+              <li>Rewards for responsible behavior</li>
+              <li>Better discounts & offers</li>
+              <li>Faster delivery</li>
+              <li>Transparent trust system</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="about" class="section reveal">
+      <div class="container">
+        <h2>About Project</h2>
+
+        <p class="subtitle">
+          Shop Score is a trust-based scoring system designed to improve reliability and transparency in e-commerce
+          platforms.
+        </p>
+
+        <div class="card-grid">
+          <div class="info-card reveal-item">
+            <h3>Smart Architecture</h3>
+            <p>Modular system with data collection, scoring engine, decision engine and dashboards.</p>
+          </div>
+
+          <div class="info-card reveal-item">
+            <h3>Admin & User Dashboards</h3>
+            <p>Admins can monitor risk users and analytics. Users can view their trust score and benefits.</p>
+          </div>
+
+          <div class="info-card reveal-item">
+            <h3>Future Scope</h3>
+            <p>AI-based scoring, real-time updates and integration with multiple e-commerce platforms.</p>
+          </div>
+
+          <div class="info-card reveal-item">
+            <h3>Vision</h3>
+            <p>To become a standard trust metric for Indian e-commerce ecosystem.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <script src="js/animations.js"></script>
+</body>
+
+</html>

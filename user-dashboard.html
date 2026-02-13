@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard – Shop Score</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header class="navbar" id="navbar">
+    <div class="nav-top">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-logo">
+          <img src="images/logo.jpg" alt="" class="nav-logo-img"
+            onerror="this.style.display='none'; this.nextElementSibling.classList.add('visible')"
+            onload="this.style.display='block'; this.nextElementSibling.classList.remove('visible')"
+            style="display:none">
+          <span class="nav-logo-fallback visible">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="url(#navLogoGradU)" />
+              <path d="M10 16l4 4 8-8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <defs>
+                <linearGradient id="navLogoGradU" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#4f46e5" />
+                  <stop offset="1" stop-color="#7c3aed" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+        </span>
+        <span class="nav-brand-text">Shop Score</span>
+      </a>
+      <div class="nav-actions">
+        <a href="user-dashboard.html" class="btn btn-primary">Dashboard</a>
+        <a href="index.html" class="btn btn-outline">Home</a>
+      </div>
+    </div>
+    <nav class="nav-main">
+      <span id="nav-welcome" class="nav-welcome-text"></span>
+    </nav>
+  </header>
+
+  <div class="dashboard">
+    <div class="dashboard-header animate-in">
+      <h1 id="welcome-title">Welcome</h1>
+    </div>
+
+    <section class="score-section">
+      <div class="card-glass score-card user-score-card animate-in" style="animation-delay: 0.1s;">
+        <div id="score-value" class="score-value">—</div>
+        <p style="color: var(--text-secondary); margin-bottom: 0;">Your Shop Score (0 – 1000)</p>
+        <div class="score-meter-wrap">
+          <div id="score-meter-fill" class="score-meter-fill" style="width: 0%;"></div>
+        </div>
+        <div id="decision-badge" class="decision-badge">—</div>
+        <ul id="benefits-list" class="benefits-list"></ul>
+      </div>
+    </section>
+
+    <div class="metrics-grid" id="metrics-grid">
+      <div class="metric-card animate-in" style="animation-delay: 0.2s;">
+        <div class="value" id="metric-orders">0</div>
+        <div class="label">Successful orders</div>
+      </div>
+      <div class="metric-card animate-in" style="animation-delay: 0.25s;">
+        <div class="value" id="metric-cancellations">0</div>
+        <div class="label">Cancelled orders</div>
+      </div>
+      <div class="metric-card animate-in" style="animation-delay: 0.3s;">
+        <div class="value" id="metric-cod">0</div>
+        <div class="label">COD failures</div>
+      </div>
+      <div class="metric-card animate-in" style="animation-delay: 0.35s;">
+        <div class="value" id="metric-return">0%</div>
+        <div class="label">Return rate</div>
+      </div>
+      <div class="metric-card animate-in" style="animation-delay: 0.4s;">
+        <div class="value" id="metric-loyalty">0</div>
+        <div class="label">Loyalty score</div>
+      </div>
+    </div>
+
+    <section class="dashboard-section reveal">
+      <h2>Order history</h2>
+      <p class="section-desc">Your recent orders. Shop score is calculated from deliveries, returns, and cancellations.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Date</th>
+              <th>Price</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="order-history-tbody">
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="dashboard-section savings-section reveal">
+      <h2>Savings &amp; offers</h2>
+      <div class="card-glass savings-card animate-in">
+        <div class="savings-amount" id="savings-amount">₹0</div>
+        <p class="savings-label">Saved through discounts</p>
+        <a href="#" class="btn btn-primary" id="btn-personalized-offers">Personalized offers</a>
+      </div>
+    </section>
+
+    <div class="logout-wrap">
+      <a href="user-login.html" class="btn btn-outline">Logout</a>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/user-dashboard.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+
+</html>

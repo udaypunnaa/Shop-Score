@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard – Shop Score</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header class="navbar" id="navbar">
+    <div class="nav-top">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-logo">
+          <img src="images/logo.jpg" alt="" class="nav-logo-img"
+            onerror="this.style.display='none'; this.nextElementSibling.classList.add('visible')"
+            onload="this.style.display='block'; this.nextElementSibling.classList.remove('visible')"
+            style="display:none">
+          <span class="nav-logo-fallback visible">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="url(#navLogoGradA)" />
+              <path d="M10 16l4 4 8-8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <defs>
+                <linearGradient id="navLogoGradA" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#4f46e5" />
+                  <stop offset="1" stop-color="#7c3aed" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+        </span>
+        <span class="nav-brand-text">Shop Score</span>
+      </a>
+      <div class="nav-actions">
+        <a href="admin-dashboard.html" class="btn btn-primary">Dashboard</a>
+        <a href="index.html" class="btn btn-outline">Home</a>
+      </div>
+    </div>
+    <nav class="nav-main">
+      <span id="nav-company" class="nav-welcome-text"></span>
+    </nav>
+  </header>
+
+  <div class="dashboard">
+    <div class="dashboard-header">
+      <h1 id="company-title">Admin Dashboard</h1>
+    </div>
+
+    <div class="admin-stats" id="admin-stats">
+      <div class="admin-stat-card">
+        <div class="value" id="stat-total-customers">0</div>
+        <div class="label">Total customers</div>
+      </div>
+      <div class="admin-stat-card">
+        <div class="value" id="stat-high-risk">0</div>
+        <div class="label">High risk customers</div>
+      </div>
+      <div class="admin-stat-card">
+        <div class="value" id="stat-average-score">0</div>
+        <div class="label">Average Shop Score</div>
+      </div>
+      <div class="admin-stat-card">
+        <div class="value" id="stat-trusted">0</div>
+        <div class="label">Trusted customers</div>
+      </div>
+      <div class="admin-stat-card">
+        <div class="value" id="stat-total-orders">0</div>
+        <div class="label">Total orders</div>
+      </div>
+    </div>
+
+    <div class="admin-main">
+      <div>
+        <div class="toolbar">
+          <input type="search" id="search-customers" placeholder="Search by name..." aria-label="Search customers">
+          <div class="filter-btns">
+            <button type="button" class="btn btn-outline filter-btn active" data-filter="all">All</button>
+            <button type="button" class="btn btn-outline filter-btn" data-filter="trusted">Trusted</button>
+            <button type="button" class="btn btn-outline filter-btn" data-filter="normal">Normal</button>
+            <button type="button" class="btn btn-outline filter-btn" data-filter="risk">Risk</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Customer ID</th>
+                <th>Name</th>
+                <th>Orders</th>
+                <th>Cancellations</th>
+                <th>Shop Score</th>
+                <th>Tier</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="customers-tbody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="admin-side-cards">
+        <div class="chart-card">
+          <h3>Shop Score overview</h3>
+          <div class="pie-chart-wrap" id="pie-chart-wrap" aria-hidden="true"></div>
+          <div class="pie-legend">
+            <span class="pie-legend-item trusted">High <strong id="pie-high-pct">0%</strong></span>
+            <span class="pie-legend-item normal">Medium <strong id="pie-medium-pct">0%</strong></span>
+            <span class="pie-legend-item risk">Low <strong id="pie-low-pct">0%</strong></span>
+          </div>
+        </div>
+        <div class="card-solid" style="padding: 1rem;">
+          <h3 style="margin-bottom: 0.75rem;">Score distribution</h3>
+          <div class="chart-bars" id="score-chart">
+            <div class="chart-row">
+              <span class="label">Trusted</span>
+              <div class="bar-wrap">
+                <div class="bar" id="bar-trusted" style="width: 0%; background: var(--score-trusted);"></div>
+              </div>
+            </div>
+            <div class="chart-row">
+              <span class="label">Normal</span>
+              <div class="bar-wrap">
+                <div class="bar" id="bar-normal" style="width: 0%; background: var(--score-normal);"></div>
+              </div>
+            </div>
+            <div class="chart-row">
+              <span class="label">Risk</span>
+              <div class="bar-wrap">
+                <div class="bar" id="bar-risk" style="width: 0%; background: var(--score-risk);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="status-panel card-solid">
+          <h3>System status</h3>
+          <ul class="status-list" id="status-list"></ul>
+        </div>
+        <div class="activity-panel card-solid">
+          <h3>Activity log</h3>
+          <ul class="activity-list" id="activity-list"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="logout-wrap">
+      <a href="admin-login.html" class="btn btn-outline">Logout</a>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/admin-dashboard.js"></script>
+</body>
+
+</html>
