@@ -5,11 +5,10 @@
  */
 
 const USERS = [
-  { username: 'ravi',  password: '1234', score: 850, orders: 45, cancellations: 2,  codFailures: 0, returnRate: 4,  loyaltyScore: 92 },
-  { username: 'raju',  password: '1234', score: 650, orders: 28, cancellations: 5,  codFailures: 2, returnRate: 12, loyaltyScore: 68 },
-  { username: 'anil',  password: '1234', score: 380, orders: 12, cancellations: 8,  codFailures: 4, returnRate: 25, loyaltyScore: 35 },
-  { username: 'sita',  password: '1234', score: 920, orders: 78, cancellations: 1,  codFailures: 0, returnRate: 2,  loyaltyScore: 98 },
-  { username: 'kiran', password: '1234', score: 540, orders: 22, cancellations: 6,  codFailures: 3, returnRate: 18, loyaltyScore: 52 },
+  { username: 'divya',  password: '1234', score: 850, orders: 45, cancellations: 2,  codFailures: 0, returnRate: 4,  loyaltyScore: 92 },
+  { username: 'priya',  password: '1234', score: 650, orders: 28, cancellations: 5,  codFailures: 2, returnRate: 12, loyaltyScore: 68 },
+  { username: 'uday',  password: '1234', score: 380, orders: 12, cancellations: 8,  codFailures: 4, returnRate: 25, loyaltyScore: 35 },
+  { username: 'sai',  password: '1234', score: 920, orders: 78, cancellations: 1,  codFailures: 0, returnRate: 2,  loyaltyScore: 98 },
 ];
 
 const ADMINS = [
@@ -47,10 +46,10 @@ const ACTIVITY_LOG = [
 
 /** Customers list for admin dashboard (with Customer ID) */
 const CUSTOMERS = [
-  { id: 'CUS001', name: 'Ravi',   score: 850, orders: 45, cancellations: 2,  codFailures: 0 },
-  { id: 'CUS002', name: 'Raju',   score: 650, orders: 28, cancellations: 5,  codFailures: 2 },
-  { id: 'CUS003', name: 'Anil',   score: 380, orders: 12, cancellations: 8,  codFailures: 4 },
-  { id: 'CUS004', name: 'Sita',   score: 920, orders: 78, cancellations: 1,  codFailures: 0 },
+  { id: 'CUS001', name: 'Divya',  score: 850, orders: 45, cancellations: 2,  codFailures: 0 },
+  { id: 'CUS002', name: 'Priya',  score: 650, orders: 28, cancellations: 5,  codFailures: 2 },
+  { id: 'CUS003', name: 'Uday',   score: 380, orders: 12, cancellations: 8,  codFailures: 4 },
+  { id: 'CUS004', name: 'Sai',    score: 920, orders: 78, cancellations: 1,  codFailures: 0 },
   { id: 'CUS005', name: 'Kiran',  score: 540, orders: 22, cancellations: 6,  codFailures: 3 },
   { id: 'CUS006', name: 'Priya',  score: 780, orders: 56, cancellations: 3,  codFailures: 1 },
   { id: 'CUS007', name: 'Vikram', score: 410, orders: 15, cancellations: 7,  codFailures: 5 },
@@ -61,37 +60,32 @@ const CUSTOMERS = [
 
 /** Order history per user (product, date, price, status) */
 const ORDER_HISTORY_BY_USER = {
-  ravi:  [
+  divya: [
     { product: 'Wireless Earbuds Pro', date: '2025-02-10', price: '₹2,499', status: 'Delivered' },
     { product: 'Smart Watch Series 5', date: '2025-02-05', price: '₹4,999', status: 'Delivered' },
     { product: 'USB-C Hub', date: '2025-01-28', price: '₹1,299', status: 'Delivered' },
     { product: 'Running Shoes', date: '2025-01-15', price: '₹3,499', status: 'Returned' },
     { product: 'Backpack', date: '2025-01-02', price: '₹1,899', status: 'In Transit' },
   ],
-  raju:  [
+  priya: [
     { product: 'Bluetooth Speaker', date: '2025-02-08', price: '₹1,799', status: 'Delivered' },
     { product: 'Phone Stand', date: '2025-01-20', price: '₹399', status: 'Delivered' },
     { product: 'Power Bank', date: '2025-01-12', price: '₹999', status: 'Returned' },
   ],
-  anil:  [
+  uday:  [
     { product: 'LED Desk Lamp', date: '2025-02-01', price: '₹649', status: 'Delivered' },
     { product: 'Mouse Pad', date: '2025-01-18', price: '₹299', status: 'Cancelled' },
   ],
-  sita:  [
+  sai:   [
     { product: 'Laptop Sleeve', date: '2025-02-12', price: '₹899', status: 'In Transit' },
     { product: 'Mechanical Keyboard', date: '2025-02-06', price: '₹5,499', status: 'Delivered' },
     { product: 'Monitor Arm', date: '2025-01-25', price: '₹2,199', status: 'Delivered' },
     { product: 'Webcam HD', date: '2025-01-10', price: '₹3,299', status: 'Delivered' },
   ],
-  kiran: [
-    { product: 'Headphones', date: '2025-02-09', price: '₹2,199', status: 'Delivered' },
-    { product: 'Tablet Case', date: '2025-01-22', price: '₹599', status: 'Returned' },
-    { product: 'Screen Guard', date: '2025-01-08', price: '₹349', status: 'Delivered' },
-  ],
 };
 
 /** Savings (₹) per user for Savings & Offers section */
-const SAVINGS_BY_USER = { ravi: 2950, raju: 1200, anil: 0, sita: 4100, kiran: 850 };
+const SAVINGS_BY_USER = { divya: 2950, priya: 1200, uday: 0, sai: 4100 };
 
 function getScoreTier(score) {
   if (score >= 800) return 'trusted';
